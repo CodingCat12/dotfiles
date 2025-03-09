@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   dconf = {
     enable = true;
     settings = {
@@ -31,5 +31,9 @@
     hyprcursor.enable = true;
   };
 
+
+  imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+  ]
   catppuccin.flavor = "mocha";
 }
