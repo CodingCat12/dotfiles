@@ -4,6 +4,8 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.pkgs.follows = "nixpkgs";
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
@@ -14,7 +16,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [./nixos/configuration.nix];
     };
