@@ -1,19 +1,39 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.pkgs.follows = "nixpkgs";
   };
 
   outputs = {
-    self,
     nixpkgs,
-  }: let
+    home-manager,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-      devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [
-      nixd alejandra
-    ];
+    nixosConfigurations.nixos = nixpkgs.lib.nixSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./nixos
+      ];
+    };
+
+    homeConfigurations = {
+      "luukm@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs;
+        extraSpecialArgs = {inherit inputs;};
+        modules = [./home-manager/home.nix];
       };
+    };
+
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [
+        nixd
+        alejandra
+      ];
+    };
   };
 }
