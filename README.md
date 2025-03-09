@@ -4,6 +4,6 @@
 
 My NixOS dotfiles.
 
-- WM: Hyprland
-- Colorscheme: Catppuccin Mocha
-- Shell: Fish
+- WM: [Hyprland](https://hyprland.org)
+- Colorscheme: [Catppuccin Mocha](https:/catppuccin.com)
+- Shell: [Fish](fishshell.com)
