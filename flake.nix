@@ -23,7 +23,6 @@
 
     homeConfigurations = {
       "luukm@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgs;
         extraSpecialArgs = {inherit inputs;};
         modules = [./home-manager/home.nix];
       };
