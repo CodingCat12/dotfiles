@@ -1,16 +1,8 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports = [
-    inputs.nur.modules.nixos.default
-  ];
-
+{inputs, ...}: {
   programs.firefox = {
     enable = true;
     profiles.luukm = {
-      extensions = with pkgs.nur.repos.firefox-addons; [
+      extensions = with inputs.firefox-addon.packages."x86_64-linux"; [
         ublock-origin
       ];
     };
