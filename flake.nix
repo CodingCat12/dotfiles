@@ -28,12 +28,14 @@
       modules = [./nixos/configuration.nix];
     };
 
-    homeConfigurations.luukm = home-manager.lib.homeManagerConfiguration {
-      pkgs = pkgs;
-      extraSpecialArgs = {inherit inputs;};
-      modules = [
-        ./home-manager/home.nix
-      ];
+    homeConfigurations = {
+      "luukm@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs;
+        extraSpecialArgs = {inherit inputs;};
+        modules = [
+          ./home-manager/home.nix
+        ];
+      };
     };
 
     devShells.${system}.default = pkgs.mkShell {
