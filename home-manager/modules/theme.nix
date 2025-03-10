@@ -1,4 +1,8 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   dconf = {
     enable = true;
     settings = {
@@ -30,7 +34,6 @@
     gtk.enable = true;
     hyprcursor.enable = true;
   };
-
 
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
