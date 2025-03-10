@@ -1,3 +1,6 @@
-{inputs, ...}: {
-  programs.firefox.enable = true;
+{pkgs, ...}: {
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox-devedition-bin;
+  };
 }
