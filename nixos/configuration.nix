@@ -68,8 +68,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -161,9 +160,6 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
