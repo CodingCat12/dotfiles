@@ -7,5 +7,6 @@
     ./terminal.nix
     ./misc.nix
     ./neovim
+    ./firefox.nix
   ];
 }

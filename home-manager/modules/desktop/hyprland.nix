@@ -10,7 +10,7 @@
       "$fileManager" = "kitty -e yazi";
       "$taskManager" = "kitty -e btop";
       "$menu" = "rofi -show drun";
-      "$browser" = "firefox";
+      "$browser" = "firefox-developer-edition";
 
       monitor = ",preferred,auto,1";
 
