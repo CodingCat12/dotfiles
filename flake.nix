@@ -11,27 +11,25 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
+  outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      modules = [./nixos/configuration.nix];
-    };
+      modules = [
+        ./nixos/configuration.nix
+        inputs.home-manager.nixosModules.default
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.luukm = ./home-manager/home.nix;
 
-    homeConfigurations = {
-      "luukm@nixos" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {inherit inputs;};
-        modules = [
-          ./home-manager/home.nix
-        ];
-      };
+            extraSpecialArgs = {inherit inputs;};
+          };
+        }
+      ];
     };
 
     devShells.${system}.default = pkgs.mkShell {
