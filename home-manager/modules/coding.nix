@@ -6,7 +6,10 @@
   ];
 
   programs.git = {
-    userName = "Luukm";
+    enable = true;
+    userName = "luukm";
     userEmail = "luuk.machielse@gmail.com";
   };
+
+  programs.gh.enable = true;
 }
