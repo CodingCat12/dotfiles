@@ -24,9 +24,11 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.luukm = ./home-manager/home.nix;
-
             extraSpecialArgs = {inherit inputs;};
+
+            backupFileExtension = "bak";
+
+            users.luukm = ./home-manager/home.nix;
           };
         }
       ];
