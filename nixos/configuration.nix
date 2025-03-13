@@ -8,11 +8,6 @@
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
-  #boot.loader.systemd-boot = {
-  #  enable = true;
-  #};
-
   boot.loader.grub = {
     enable = true;
     devices = ["nodev"];
@@ -53,7 +48,6 @@
     LC_TIME = "nl_NL.UTF-8";
   };
 
-  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -72,21 +66,12 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    man-pages
-    man-pages-posix
-
     git
     gcc
     unzip
     nodejs
     mangohud
     protonup
-
-    hyprpicker
-    hyprcursor
-    hyprlock
-    hypridle
-    hyprpaper
   ];
 
   programs.steam = {
@@ -104,13 +89,6 @@
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     withUWSM = true;
   };
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
-  };
-
-  security.pam.services.hyprlock = {};
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;

@@ -8,6 +8,9 @@
 
   programs.nushell = {
     enable = true;
+    extraConfig = ''
+      $env.config.show_banner = false
+    '';
   };
 
   programs.carapace.enable = true;
@@ -21,11 +24,6 @@
   };
 
   catppuccin.bat.enable = true;
-
-  home.sessionVariables = {
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
-    MANROFFOPT = "-c";
-  };
 
   programs.fastfetch = {
     enable = true;

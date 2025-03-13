@@ -7,4 +7,6 @@
     vimAlias = true;
     vimdiffAlias = true;
   };
+
+  xdg.configFile."nvim".source = ./config;
 }
