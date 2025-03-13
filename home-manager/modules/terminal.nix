@@ -1,16 +1,13 @@
 {
   programs.fd.enable = true;
   programs.ripgrep.enable = true;
-  programs.eza.enable = true;
 
   programs.starship.enable = true;
   catppuccin.starship.enable = true;
 
   programs.nushell = {
     enable = true;
-    extraConfig = ''
-      $env.config.show_banner = false
-    '';
+    configFile = ./config.nu;
   };
 
   programs.carapace.enable = true;
