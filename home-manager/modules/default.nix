@@ -4,7 +4,7 @@
     ./coding.nix
     ./session-vars.nix
     ./theme.nix
-    ./terminal.nix
+    ./terminal
     ./misc.nix
     ./neovim
     ./firefox.nix
