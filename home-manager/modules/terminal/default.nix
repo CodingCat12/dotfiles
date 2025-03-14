@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./yazi.nix
+  ];
+
   programs.fd.enable = true;
   programs.ripgrep.enable = true;
 
@@ -52,13 +56,6 @@
 
   programs.fzf.enable = true;
   catppuccin.fzf.enable = true;
-
-  programs.yazi = {
-    enable = true;
-    enableNushellIntegration = true;
-  };
-
-  catppuccin.yazi.enable = true;
 
   programs.btop.enable = true;
   catppuccin.btop.enable = true;
