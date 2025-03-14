@@ -8,5 +8,9 @@
     vimdiffAlias = true;
   };
 
-  xdg.configFile."nvim".source = ./config;
+  home.file.".config/nvim" = {
+    source = ./config;
+    recursive = true;
+  };
+  home.file.".config/nvim/lazy-lock.json".enable = false;
 }
