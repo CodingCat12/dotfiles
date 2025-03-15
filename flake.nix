@@ -19,18 +19,6 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./nixos/configuration.nix
-        inputs.home-manager.nixosModules.default
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = {inherit inputs;};
-
-            backupFileExtension = "bak";
-
-            users.luukm = ./home-manager/home.nix;
-          };
-        }
       ];
     };
 
