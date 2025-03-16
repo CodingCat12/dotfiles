@@ -6,7 +6,6 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
   ];
 
   boot.loader.grub = {
@@ -54,14 +53,6 @@
     variant = "";
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
-
-    backupFileExtension = "bak";
-  };
-
   users.users.luukm = {
     isNormalUser = true;
     description = "Luuk Machielse";
@@ -71,8 +62,6 @@
     ];
     shell = pkgs.nushell;
   };
-
-  home-manager.users.luukm = ../home-manager/home.nix;
 
   nixpkgs.config.allowUnfree = true;
 
