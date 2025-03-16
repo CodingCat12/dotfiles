@@ -3,6 +3,7 @@
     go
     lua
     godot_4
+    obsidian
   ];
 
   programs.git = {
