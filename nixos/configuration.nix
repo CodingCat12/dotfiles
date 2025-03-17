@@ -61,12 +61,19 @@
     variant = "";
   };
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   users.users.luukm = {
     isNormalUser = true;
     description = "Luuk Machielse";
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     shell = pkgs.nushell;
   };
