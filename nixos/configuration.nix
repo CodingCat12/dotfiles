@@ -6,7 +6,6 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./rust.nix
   ];
 
   boot.loader.grub = {
