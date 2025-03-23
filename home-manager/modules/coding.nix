@@ -4,6 +4,10 @@
     lua
     godot_4
     obsidian
+
+    jetbrains.clion
+    jetbrains.rust-rover
+    jetbrains.goland
   ];
 
   programs.git = {
