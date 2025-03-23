@@ -32,6 +32,12 @@
     ];
   };
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    flake = "/home/luukm/dotfiles";
+  };
+
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
@@ -98,11 +104,17 @@
   programs.gamemode.enable = true;
   programs.steam.gamescopeSession.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    withUWSM = true;
-  };
+  #programs.hyprland = {
+  #enable = true;
+  #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  #withUWSM = true;
+  #  };
+
+  services.desktopManager.plasma6.enable = true;
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    konsole # replaced by kitty
+    khelpcenter
+  ];
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
@@ -119,14 +131,11 @@
     enable32Bit = true;
   };
 
-  # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
     modesetting.enable = true;
     open = true;
-
-    nvidiaSettings = true;
 
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };

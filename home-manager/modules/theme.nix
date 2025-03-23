@@ -12,12 +12,6 @@
     };
   };
 
-  qt.enable = true;
-  qt.platformTheme.name = "gtk";
-
-  qt.style.name = "adwaita-dark";
-  qt.style.package = pkgs.adwaita-qt;
-
   gtk.enable = true;
 
   gtk.theme.name = "adw-gtk3-dark";

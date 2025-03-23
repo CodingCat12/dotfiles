@@ -1,8 +1,4 @@
 {
-  imports = [
-    ./yazi.nix
-  ];
-
   programs.fd.enable = true;
   programs.ripgrep.enable = true;
 
@@ -56,9 +52,6 @@
 
   programs.fzf.enable = true;
   catppuccin.fzf.enable = true;
-
-  programs.btop.enable = true;
-  catppuccin.btop.enable = true;
 
   programs.cava.enable = true;
   catppuccin.cava.enable = true;

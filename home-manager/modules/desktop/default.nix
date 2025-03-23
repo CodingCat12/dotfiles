@@ -2,7 +2,8 @@
   imports = [
     ./hyprland.nix
     ./rofi.nix
-    ./kitty.nix
     ./waybar
+    ./yazi.nix
+    ./btop.nix
   ];
 }
