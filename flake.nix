@@ -35,8 +35,12 @@
 
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
+        # For Nix
         nixd
         alejandra
+
+        # For Lua
+        lua-language-server
       ];
     };
   };
