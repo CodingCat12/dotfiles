@@ -40,6 +40,7 @@
         alejandra
 
         # For Lua
+        lua
         lua-language-server
       ];
     };
