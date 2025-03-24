@@ -14,6 +14,7 @@ return {
     opts = {
       servers = {
         nixd = {},
+        gdscript = {},
       },
     },
   },
