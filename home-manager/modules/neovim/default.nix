@@ -12,5 +12,7 @@
     source = ./config;
     recursive = true;
   };
+
+  # Let lazy.nvim manage the lock itself
   home.file.".config/nvim/lazy-lock.json".enable = false;
 }
