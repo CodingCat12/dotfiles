@@ -1,8 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    go
-    lua
-    godot_4
     obsidian
 
     jetbrains.clion
