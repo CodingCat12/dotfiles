@@ -14,7 +14,4 @@
   };
 
   programs.gh.enable = true;
-
-  programs.helix.enable = true;
-  catppuccin.helix.enable = true;
 }

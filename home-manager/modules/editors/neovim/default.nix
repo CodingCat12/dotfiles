@@ -8,5 +8,7 @@
     vimdiffAlias = true;
   };
 
+  catppuccin.nvim.enable = true;
+
   xdg.configFile."nvim".source = ./config;
 }

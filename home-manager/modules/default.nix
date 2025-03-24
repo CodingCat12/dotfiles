@@ -6,7 +6,8 @@
     ./theme.nix
     ./terminal
     ./misc.nix
-    ./neovim
     ./firefox.nix
+    ./editors/vscode
+    ./editors/neovim
   ];
 }
