@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./plymouth.nix
   ];
 
   boot.loader.grub = {
