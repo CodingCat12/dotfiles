@@ -1,21 +1,13 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     ./plymouth.nix
+    ./grub.nix
   ];
-
-  boot.loader.grub = {
-    enable = true;
-    devices = ["nodev"];
-    efiSupport = true;
-  };
-
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -119,6 +111,7 @@
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  catppuccin.sddm.enable = true;
 
   fonts.packages = with pkgs; [
     noto-fonts
