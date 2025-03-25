@@ -11,7 +11,11 @@
     enable = true;
     userName = "luukm";
     userEmail = "luuk.machielse@gmail.com";
+
+    delta.enable = true;
   };
+
+  catppuccin.delta.enable = true;
 
   programs.gh.enable = true;
 }
