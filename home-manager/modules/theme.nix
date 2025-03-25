@@ -29,8 +29,5 @@
     hyprcursor.enable = true;
   };
 
-  imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
-  ];
   catppuccin.flavor = "mocha";
 }

@@ -30,6 +30,7 @@
 
       modules = [
         ./home-manager/home.nix
+        inputs.catppuccin.homeManagerModules.catppuccin
       ];
     };
 
