@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   dconf = {
     enable = true;
     settings = {
@@ -19,6 +15,10 @@
 
   gtk.iconTheme.name = "Papirus";
   gtk.iconTheme.package = pkgs.papirus-icon-theme;
+
+  home.packages = with pkgs; [
+    (catppuccin-kde.override {flavour = ["mocha"];})
+  ];
 
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
