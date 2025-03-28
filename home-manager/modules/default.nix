@@ -9,5 +9,6 @@
     ./firefox.nix
     ./editors/vscode
     ./editors/neovim
+    ./desktop
   ];
 }

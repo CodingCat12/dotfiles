@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   pkgs,
   ...
 }: {
@@ -97,21 +98,21 @@
   programs.gamemode.enable = true;
   programs.steam.gamescopeSession.enable = true;
 
-  #programs.hyprland = {
-  #enable = true;
-  #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  #withUWSM = true;
-  #  };
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    withUWSM = true;
+  };
 
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = false;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     konsole # replaced by kitty
     khelpcenter
   ];
 
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.package = pkgs.kdePackages.sddm;
   services.displayManager.sddm.wayland.enable = true;
-  catppuccin.sddm.enable = true;
 
   fonts.packages = with pkgs; [
     noto-fonts
