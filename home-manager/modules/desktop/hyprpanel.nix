@@ -1,5 +1,12 @@
-{
+{inputs, ...}: {
+  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
+
   programs.hyprpanel = {
     enable = true;
-bar.launcher.icon = mkStrOption "󰣇";
-};}
+    hyprland.enable = true;
+
+    settings.bar = {
+      launcher.icon = "";
+    };
+  };
+}

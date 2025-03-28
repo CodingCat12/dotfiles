@@ -22,10 +22,7 @@
         "XDG_SESSION_DESKTOP,Hyprland"
       ];
 
-      exec-once = [
-        "uwsm finalize"
-        "waybar"
-      ];
+      exec-once = ["uwsm finalize"];
 
       general = {
         gaps_in = 5;
