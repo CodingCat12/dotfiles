@@ -20,6 +20,7 @@
         };
       };
       menus.dashboard.directories.left.directory3.label = "󱧼";
+      menus.volume.raiseMaximumVolume = true;
     };
   };
 }
