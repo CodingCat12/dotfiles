@@ -49,7 +49,7 @@
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         # For Nix
-        nixd
+        nil
         alejandra
 
         # For Lua

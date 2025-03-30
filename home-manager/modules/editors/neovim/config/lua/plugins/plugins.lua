@@ -13,17 +13,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        nixd = {},
         gdscript = {},
-      },
-    },
-  },
-
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        nix = { "alejandra" },
       },
     },
   },
