@@ -18,8 +18,15 @@ return {
     },
   },
 
+  {
+    "folke/snacks.nvim",
+    opts = {
+      image = {},
+    },
+  },
+
   -- Are replaced by Nix packages
-  { "williamboman/mason.nvim",           enabled = false },
+  { "williamboman/mason.nvim", enabled = false },
   { "williamboman/mason-lspconfig.nvim", enabled = false },
-  { "jay-babu/mason-nvim-dap.nvim",      enabled = false },
+  { "jay-babu/mason-nvim-dap.nvim", enabled = false },
 }

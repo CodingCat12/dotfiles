@@ -227,7 +227,7 @@
     enable = true;
 
     settings = {
-      preload = ["$HOME/wallpapers/nixos_wallpaper.png" "$HOME/wallpapers/wallpaper2.png"];
+      preload = ["/home/luukm/wallpapers/nixos_wallpaper.png" "$HOME/wallpapers/wallpaper2.png"];
 
       wallpaper = [",$HOME/wallpapers/wallpaper2.png"];
     };
