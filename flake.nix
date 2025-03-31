@@ -7,6 +7,10 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     catppuccin.url = "github:catppuccin/nix";
     hyprpanel = {
       url = "github:jas-singhfsu/hyprpanel";

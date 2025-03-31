@@ -1,9 +1,13 @@
-{
+{inputs, pkgs, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
 
     systemd.enable = false;
     xwayland.enable = true;
+
+    plugins = [
+      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+    ];
 
     settings = {
       "$terminal" = "kitty";
@@ -201,6 +205,10 @@
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
+      ];
+
+      bindr = [
+        "SUPER, SUPER_L, overview:toggle"
       ];
 
       windowrulev2 = [
