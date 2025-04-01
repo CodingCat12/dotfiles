@@ -1,6 +1,6 @@
 {
   imports = [
-    ./kitty.nix
+    ./ghostty.nix
     ./coding.nix
     ./session-vars.nix
     ./theme.nix

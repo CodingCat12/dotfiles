@@ -10,7 +10,7 @@
     ];
 
     settings = {
-      "$terminal" = "kitty";
+      "$terminal" = "ghostty";
       "$fileManager" = "kitty -e yazi";
       "$taskManager" = "kitty -e btop";
       "$menu" = "rofi -show drun";
