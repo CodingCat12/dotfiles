@@ -61,5 +61,7 @@
         lua-language-server
       ];
     };
+
+    formatter.${system} = pkgs.alejandra;
   };
 }
