@@ -1,5 +1,5 @@
 return {
-  { "folke/tokyonight.nvim", enabled = true },
+  { "folke/tokyonight.nvim", enabled = false },
   { "catppuccin/nvim" },
 
   {
