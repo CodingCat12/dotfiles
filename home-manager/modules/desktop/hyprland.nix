@@ -15,8 +15,8 @@
 
     settings = {
       "$terminal" = "ghostty";
-      "$fileManager" = "kitty -e yazi";
-      "$taskManager" = "kitty -e btop";
+      "$fileManager" = "ghostty -e yazi";
+      "$taskManager" = "ghostty -e btop";
       "$menu" = "anyrun";
       "$browser" = "firefox-developer-edition";
 
