@@ -17,7 +17,7 @@
       "$terminal" = "ghostty";
       "$fileManager" = "kitty -e yazi";
       "$taskManager" = "kitty -e btop";
-      "$menu" = "rofi -show drun";
+      "$menu" = "anyrun";
       "$browser" = "firefox-developer-edition";
 
       monitor = ",preferred,auto,1";

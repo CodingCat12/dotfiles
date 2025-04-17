@@ -16,6 +16,10 @@
       url = "github:jas-singhfsu/hyprpanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -47,6 +51,7 @@
       modules = [
         ./home-manager/home.nix
         inputs.catppuccin.homeModules.catppuccin
+        inputs.anyrun.homeManagerModules.default
       ];
     };
 
