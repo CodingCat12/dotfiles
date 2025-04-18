@@ -9,9 +9,9 @@
     enable = true;
     configFile.source = ./config.nu;
   };
+  home.shell.enableNushellIntegration = true;
 
   programs.carapace.enable = true;
-  programs.carapace.enableNushellIntegration = true;
 
   programs.bat = {
     enable = true;

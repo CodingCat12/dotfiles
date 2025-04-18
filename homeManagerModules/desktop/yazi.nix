@@ -8,7 +8,6 @@
 in {
   programs.yazi = {
     enable = true;
-    enableNushellIntegration = true;
     plugins = {
       chmod = "${plugins-repo}/chmod.yazi";
       #git = "${plugins-repo}/git.yazi";
