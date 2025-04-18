@@ -31,6 +31,11 @@
       modules = [./hosts/default];
     };
 
+    nixosConfigurations.school = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [./hosts/school];
+    };
+
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         # For Nix
