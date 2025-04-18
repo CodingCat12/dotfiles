@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ../../nixosModules/grub.nix
     ../../nixosModules/plymouth.nix
+    ../../nixosModules/sddm.nix
     inputs.catppuccin.nixosModules.catppuccin
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -62,19 +63,12 @@
     variant = "";
   };
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
-
   users.users.luukm = {
     isNormalUser = true;
     description = "Luuk Machielse";
     extraGroups = [
       "networkmanager"
       "wheel"
-      "docker"
     ];
     shell = pkgs.nushell;
   };
@@ -123,16 +117,6 @@
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     withUWSM = true;
   };
-
-  services.desktopManager.plasma6.enable = false;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    konsole # replaced by kitty
-    khelpcenter
-  ];
-
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.package = pkgs.kdePackages.sddm;
-  services.displayManager.sddm.wayland.enable = true;
 
   fonts.packages = with pkgs; [
     noto-fonts
