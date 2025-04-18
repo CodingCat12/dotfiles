@@ -21,10 +21,6 @@ in {
         sha256 = "sha256-oHoBq7BESjGeKsaBnDt0TXV78ggGCdYndLpcwwQ8Zts=";
       };
     };
-
-    initLua = ''
-      require("starship"):setup()
-    '';
   };
 
   catppuccin.yazi.enable = true;
