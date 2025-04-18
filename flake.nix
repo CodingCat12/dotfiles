@@ -26,28 +26,9 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      modules = [
-        ./nixos/configuration.nix
-        inputs.catppuccin.nixosModules.catppuccin
-      ];
-    };
-
-    homeConfigurations.luukm = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [
-          inputs.hyprpanel.overlay
-        ];
-      };
-
-      extraSpecialArgs = {inherit inputs;};
-
-      modules = [
-        ./home-manager/home.nix
-        inputs.catppuccin.homeModules.catppuccin
-      ];
+      modules = [./hosts/default];
     };
 
     devShells.${system}.default = pkgs.mkShell {

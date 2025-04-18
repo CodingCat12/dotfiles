@@ -6,8 +6,10 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./plymouth.nix
-    ./grub.nix
+    ../../nixosModules/grub.nix
+    ../../nixosModules/plymouth.nix
+    inputs.catppuccin.nixosModules.catppuccin
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   networking.hostName = "nixos";
@@ -75,6 +77,11 @@
       "docker"
     ];
     shell = pkgs.nushell;
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users."luukm" = import ./home.nix;
   };
 
   nixpkgs.config.allowUnfree = true;
