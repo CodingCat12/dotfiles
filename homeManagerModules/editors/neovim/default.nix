@@ -15,4 +15,5 @@
   catppuccin.nvim.enable = true;
 
   xdg.configFile."nvim".source = ./config;
+  xdg.configFile."nvim/lazy-lock.json".enable = false;
 }
