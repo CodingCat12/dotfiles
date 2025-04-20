@@ -10,6 +10,8 @@
       window-padding-y = 12;
 
       background-opacity = 0.9;
+
+      window-decoration = "client";
     };
   };
 }
