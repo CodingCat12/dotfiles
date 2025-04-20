@@ -12,6 +12,4 @@
       rofi-calc
     ];
   };
-
-  catppuccin.rofi.enable = true;
 }

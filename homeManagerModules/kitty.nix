@@ -14,6 +14,4 @@
       window_padding_width = 12;
     };
   };
-
-  catppuccin.kitty.enable = true;
 }

@@ -12,6 +12,4 @@
       background-opacity = 0.9;
     };
   };
-
-  catppuccin.ghostty.enable = true;
 }

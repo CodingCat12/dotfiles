@@ -21,6 +21,4 @@ in {
       };
     };
   };
-
-  catppuccin.yazi.enable = true;
 }

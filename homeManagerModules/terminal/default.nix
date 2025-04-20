@@ -1,9 +1,6 @@
 {
   programs.fd.enable = true;
-  programs.ripgrep.enable = true;
-
   programs.starship.enable = true;
-  catppuccin.starship.enable = true;
 
   programs.nushell = {
     enable = true;
@@ -19,8 +16,6 @@
       pager = "less -FR";
     };
   };
-
-  catppuccin.bat.enable = true;
 
   programs.fastfetch = {
     enable = true;
@@ -51,8 +46,5 @@
   };
 
   programs.fzf.enable = true;
-  catppuccin.fzf.enable = true;
-
   programs.cava.enable = true;
-  catppuccin.cava.enable = true;
 }

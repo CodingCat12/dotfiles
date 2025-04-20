@@ -15,7 +15,5 @@
     delta.enable = true;
   };
 
-  catppuccin.delta.enable = true;
-
   programs.gh.enable = true;
 }
