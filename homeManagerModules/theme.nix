@@ -20,6 +20,10 @@
     (catppuccin-kde.override {flavour = ["mocha"];})
   ];
 
+  imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+  ];
+
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";

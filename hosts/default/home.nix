@@ -7,6 +7,5 @@
 
   imports = [
     ../../homeManagerModules
-    inputs.catppuccin.homeManagerModules.catppuccin
   ];
 }
