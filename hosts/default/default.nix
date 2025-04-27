@@ -82,7 +82,6 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [inputs.nix-minecraft.overlay];
   };
 
   environment.systemPackages = with pkgs; [
