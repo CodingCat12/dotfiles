@@ -11,6 +11,7 @@
     ../../nixosModules/sddm.nix
     inputs.catppuccin.nixosModules.catppuccin
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-minecraft.nixosModules.minecraft-servers
   ];
 
   networking.hostName = "nixos";
@@ -63,7 +64,8 @@
     variant = "";
   };
 
-  users.users.luukm = {
+  users.users = {
+    luukm = {
     isNormalUser = true;
     description = "Luuk Machielse";
     extraGroups = [
@@ -72,13 +74,17 @@
     ];
     shell = pkgs.nushell;
   };
+  };
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users."luukm" = import ./home.nix;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [inputs.nix-minecraft.overlay];
+  };
 
   environment.systemPackages = with pkgs; [
     git
@@ -150,8 +156,8 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [57621];
-  networking.firewall.allowedUDPPorts = [5353];
+  networking.firewall.allowedTCPPorts = [57621 25565];
+  networking.firewall.allowedUDPPorts = [5353 19132];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
