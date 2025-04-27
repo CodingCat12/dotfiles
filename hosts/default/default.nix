@@ -11,7 +11,6 @@
     ../../nixosModules/sddm.nix
     inputs.catppuccin.nixosModules.catppuccin
     inputs.home-manager.nixosModules.home-manager
-    inputs.nix-minecraft.nixosModules.minecraft-servers
   ];
 
   networking.hostName = "nixos";
