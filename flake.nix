@@ -25,9 +25,9 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      modules = [./hosts/default];
+      modules = [./hosts/nixos];
     };
 
     nixosConfigurations.school = nixpkgs.lib.nixosSystem {
