@@ -119,7 +119,6 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    withUWSM = true;
   };
 
   fonts.packages = with pkgs; [
