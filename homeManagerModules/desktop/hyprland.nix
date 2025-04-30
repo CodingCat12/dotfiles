@@ -7,7 +7,6 @@
     enable = true;
 
     systemd.enable = false;
-    xwayland.enable = true;
 
     settings = {
       "$terminal" = "ghostty";
