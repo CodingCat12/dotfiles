@@ -10,7 +10,6 @@
     ../../nixosModules/plymouth.nix
     ../../nixosModules/sddm.nix
     inputs.catppuccin.nixosModules.catppuccin
-    inputs.home-manager.nixosModules.home-manager
   ];
 
   networking.hostName = "nixos";
@@ -73,11 +72,6 @@
     ];
     shell = pkgs.nushell;
   };
-  };
-
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users."luukm" = import ./home.nix;
   };
 
   nixpkgs = {

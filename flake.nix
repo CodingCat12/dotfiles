@@ -20,6 +20,7 @@
 
   outputs = {
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -33,6 +34,12 @@
     nixosConfigurations.school = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [./hosts/school];
+    };
+
+    homeConfigurations."luukm@nixos" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {inherit inputs;};
+      modules = [./hosts/nixos/home.nix];
     };
 
     devShells.${system}.default = pkgs.mkShell {

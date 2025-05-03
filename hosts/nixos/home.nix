@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   home.username = "luukm";
   home.homeDirectory = "/home/luukm";
   home.stateVersion = "24.11";
