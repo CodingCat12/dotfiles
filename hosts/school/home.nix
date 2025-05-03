@@ -5,11 +5,11 @@
   home.stateVersion = "24.05";
 
   imports = [
-    ../../homeManagerModules/editors/neovim
-    ../../homeManagerModules/terminal
-    ../../homeManagerModules/coding.nix
-    ../../homeManagerModules/ghostty.nix
-    ../../homeManagerModules/firefox.nix
+    ../../homeModules/editors/neovim
+    ../../homeModules/terminal
+    ../../homeModules/coding.nix
+    ../../homeModules/ghostty.nix
+    ../../homeModules/firefox.nix
     inputs.catppuccin.homeModules.catppuccin
   ];
 
