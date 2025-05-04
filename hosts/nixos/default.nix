@@ -8,9 +8,11 @@
     ./hardware-configuration.nix
     ../../nixosModules/grub.nix
     ../../nixosModules/plymouth.nix
-    ../../nixosModules/sddm.nix
+    ../../nixosModules/greetd.nix
     inputs.catppuccin.nixosModules.catppuccin
   ];
+
+  greetd.enable = true;
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
