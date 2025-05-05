@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
   ];
- 
+
   boot.loader.grub = {
     enable = true;
     devices = ["nodev"];
@@ -97,7 +97,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users."luukm" = import ./home.nix;
     backupFileExtension = "hm-bak";
   };

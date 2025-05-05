@@ -65,14 +65,14 @@
 
   users.users = {
     luukm = {
-    isNormalUser = true;
-    description = "Luuk Machielse";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    shell = pkgs.nushell;
-  };
+      isNormalUser = true;
+      description = "Luuk Machielse";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      shell = pkgs.nushell;
+    };
   };
 
   nixpkgs = {
