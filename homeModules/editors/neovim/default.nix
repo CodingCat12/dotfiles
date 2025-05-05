@@ -9,6 +9,7 @@
 
     extraPackages = with pkgs; [
       imagemagick
+      cargo
     ];
   };
 
