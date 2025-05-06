@@ -11,7 +11,19 @@
     inputs.catppuccin.nixosModules.catppuccin
   ];
 
-  programs.regreet.enable = true;
+  programs.regreet = {
+    enable = true;
+    settings.GTK.application_prefer_dark_theme = true;
+
+    theme.name = "adw-gtk3-dark";
+    theme.package = pkgs.adw-gtk3;
+
+    iconTheme.name = "Papirus";
+    iconTheme.package = pkgs.papirus-icon-theme;
+
+    cursorTheme.name = "Bibata-Modern-Classic";
+    cursorTheme.package = pkgs.bibata-cursors;
+  };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
