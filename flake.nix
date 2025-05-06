@@ -42,6 +42,12 @@
       modules = [./hosts/nixos/home.nix];
     };
 
+    homeConfigurations."luukm@school" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {inherit inputs;};
+      modules = [./hosts/school/home.nix];
+    };
+
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         nil # nix lsp
