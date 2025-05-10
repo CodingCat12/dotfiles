@@ -6,11 +6,12 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../nixosModules/grub.nix
-    ../../nixosModules/plymouth.nix
+    ../../nixosModules
     inputs.catppuccin.nixosModules.catppuccin
   ];
 
+  grub.enable = true;
+  plymouth.enable = true;
   programs.regreet = {
     enable = true;
     settings.GTK.application_prefer_dark_theme = true;

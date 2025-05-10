@@ -1,11 +1,23 @@
 {
-  boot.loader.grub = {
-    enable = true;
-    devices = ["nodev"];
-    efiSupport = true;
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.grub;
+in {
+  options.grub = {
+    enable = lib.mkEnableOption "grub bootloader";
   };
 
-  boot.loader.efi.canTouchEfiVariables = true;
+  config = lib.mkIf cfg.enable {
+    boot.loader.grub = {
+      enable = true;
+      devices = ["nodev"];
+      efiSupport = true;
+    };
 
-  catppuccin.grub.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+
+    catppuccin.grub.enable = true;
+  };
 }
