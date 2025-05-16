@@ -55,6 +55,8 @@
 
         stylua # lua formatter
         lua-language-server # lua lsp
+
+        vscode-langservers-extracted
       ];
     };
 
