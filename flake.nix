@@ -50,11 +50,11 @@
 
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
-        nil # nix lsp
-        alejandra # nix formatter
+        nil
+        alejandra
 
-        stylua # lua formatter
-        lua-language-server # lua lsp
+        stylua
+        lua-language-server
 
         vscode-langservers-extracted
       ];
