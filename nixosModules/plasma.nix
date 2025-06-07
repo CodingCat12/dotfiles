@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   lib,
   config,
@@ -17,4 +18,13 @@ in {
       khelpcenter
     ];
   };
+=======
+{pkgs, ...}: {
+  services.desktopManager.plasma6.enable = false;
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    konsole
+    khelpcenter
+    kate
+  ];
+>>>>>>> 3177873 (Exclude `kate` from installed KDE packages)
 }
