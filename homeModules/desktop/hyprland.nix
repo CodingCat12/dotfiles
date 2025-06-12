@@ -190,6 +190,8 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
+      "debug:disable_scale_checks" = true;
+
       bindel = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
