@@ -11,7 +11,7 @@
 
       background-opacity = 0.9;
 
-gtk-single-instance = true;
+      gtk-single-instance = true;
 
       window-decoration = "client";
     };
