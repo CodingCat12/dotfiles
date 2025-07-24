@@ -1,10 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     obsidian
-
-    jetbrains.clion
-    jetbrains.rust-rover
-    jetbrains.goland
   ];
 
   programs.git = {
