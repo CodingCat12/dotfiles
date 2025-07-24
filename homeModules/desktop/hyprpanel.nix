@@ -1,10 +1,6 @@
-{inputs, ...}: {
-  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
-
+{
   programs.hyprpanel = {
-    overlay.enable = true;
     enable = true;
-    hyprland.enable = true;
 
     settings = {
       bar.launcher.icon = "";
