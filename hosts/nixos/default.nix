@@ -12,18 +12,15 @@
 
   grub.enable = true;
   plymouth.enable = true;
-  programs.regreet = {
+  services.greetd = {
     enable = true;
-    settings.GTK.application_prefer_dark_theme = true;
 
-    theme.name = "adw-gtk3-dark";
-    theme.package = pkgs.adw-gtk3;
-
-    iconTheme.name = "Papirus";
-    iconTheme.package = pkgs.papirus-icon-theme;
-
-    cursorTheme.name = "Bibata-Modern-Classic";
-    cursorTheme.package = pkgs.bibata-cursors;
+    settings = {
+      default_session = {
+        command = "${pkgs.cage}/bin/cage -m last -s -- ${pkgs.ghostty}/bin/ghostty --window-decoration=none -e ${pkgs.greetd.tuigreet}/bin/tuigreet --remember --remember-user-session";
+        user = "greeter";
+      };
+    };
   };
 
   networking.hostName = "nixos";
@@ -161,8 +158,14 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [57621 25565];
-  networking.firewall.allowedUDPPorts = [5353 19132];
+  networking.firewall.allowedTCPPorts = [
+    57621
+    25565
+  ];
+  networking.firewall.allowedUDPPorts = [
+    5353
+    19132
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
