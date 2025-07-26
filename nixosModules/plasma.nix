@@ -26,5 +26,12 @@ in {
     khelpcenter
     kate
   ];
+<<<<<<< HEAD
 >>>>>>> 3177873 (Exclude `kate` from installed KDE packages)
+=======
+
+  environment.systemPackages = with pkgs; [
+    kdePackages.sddm-kcm
+  ];
+>>>>>>> 75ded3d (Add sddm-kcm with KDE Plasma)
 }

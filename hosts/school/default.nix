@@ -51,6 +51,7 @@
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     konsole
+    kate
   ];
 
   services.xserver.xkb = {
@@ -114,6 +115,7 @@
   environment.systemPackages = with pkgs; [
     gcc
     unzip
+    kdePackages.sddm-kcm
   ];
 
   services.openssh.enable = true;
